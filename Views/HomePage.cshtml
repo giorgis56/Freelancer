@@ -1,4 +1,4 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿  @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
@@ -8,63 +8,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <style>
-           @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-*,
-*::after,
-*::before {
-  padding: 0;
+        <style>
+figure {
   margin: 0;
-  border-box: box-sizing;
+  padding: 10px;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+img {
+	width: 100%;
+	display: block;
 }
 
-.curtain {
-  /*  2 Contrasting Colors  */
-  background-image: linear-gradient(to bottom, white 50%, black 50%);
-}
-/* To extend till the bottom of the screen */
-.curtain::after {
-  content: "";
-  display: block;
-  height: 100vh;
+.gradient-border {
+	width: 50%;
+	position: relative;
+	margin: 0 auto;
 }
 
-.invert {
-    /* Stick the div to the top */
-    position: sticky;
-    top: 20px;
+.gradient-border::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 
-    /* blend the differences */
-    mix-blend-mode: difference;
-
-    /* Center the content */
-    display: grid;
-    place-items: center;
-  
-    /* Set the height of the child div */
-    height: 100vh;
 }
-
-h1 {
-    /** set the color of the text **/
-    color: white;
-    font-size: 4rem;
-    letter-spacing: 4px;
-}
-       </style>
+        </style>
     </head>
-<body>
-
-<div class="curtain">
-  <div class="invert">
-    <h1>Raise the Curtains</h1>
-  </div>
+    <body>
+        
+        
+        
+        <div class="gradient-border">
+  <figure>
+      <img src="@Model.Image.Url()" alt="@Model.Title">
+  </figure>
 </div>
 
-</body>
+    </body>
 </html>
+
+
+
